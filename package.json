@@ -1,0 +1,13 @@
+{
+  "name": "@byscripts/toolbox",
+  "scripts": {
+    "build": "turbo build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "turbo": "^2.8.10"
+  },
+  "packageManager": "pnpm@10.30.1"
+}
