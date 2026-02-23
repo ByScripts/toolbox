@@ -1,6 +1,9 @@
 {
   "name": "@byscripts/eslint-plugin",
   "version": "0.4.0",
+  "repository": {
+    "url": "https://github.com/ByScripts/toolbox"
+  },
   "type": "module",
   "files": [
     "dist"
