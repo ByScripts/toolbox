@@ -7,7 +7,7 @@ Shared ESLint flat config for JavaScript, TypeScript, and Vue 3 projects.
 ### Vue 3 + TypeScript (full config)
 
 ```bash
-pnpm add -D @byscripts/eslint-config eslint eslint-plugin-vue @vue/eslint-config-typescript @byscripts/eslint-plugin
+pnpm add -D @byscripts/eslint-config jiti eslint eslint-plugin-vue @vue/eslint-config-typescript
 ```
 
 ```js
@@ -20,7 +20,7 @@ export default vue;
 ### TypeScript only
 
 ```bash
-pnpm add -D @byscripts/eslint-config eslint
+pnpm add -D @byscripts/eslint-config jiti eslint
 ```
 
 ```js

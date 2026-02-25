@@ -24,15 +24,20 @@ Custom order via rule options:
 }]
 ```
 
-## Dev
+## Install
 
 ```bash
-pnpm build        # compile src/ -> dist/index.mjs + dist/index.d.mts
-pnpm publish --access public   # publish to npm
+pnpm add -D @byscripts/eslint-plugin eslint
+```
+
+```js
+// eslint.config.js
+import vueBlockAttributeOrder from "@byscripts/eslint-plugin/vue-block-attribute-order";
+
+export default [...yourOtherRules, vueBlockAttributeOrder];
 ```
 
 ## Notes
 
-- Built with `tsdown --dts`
-- Peer dependency: `eslint ^9.22.0`
+- Peer dependency: `eslint ^9.22.0 || ^10.0.0`
 - Requires `vue-eslint-parser` in the consumer project (for `parserServices.getDocumentFragment()`)
