@@ -1,6 +1,6 @@
 {
   "name": "@byscripts/eslint-config",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "repository": {
     "url": "https://github.com/ByScripts/toolbox"
   },
@@ -9,23 +9,47 @@
     "dist"
   ],
   "exports": {
-    ".": {
-      "types": "./dist/index.d.mts",
-      "default": "./dist/index.mjs"
+    "./javascript": {
+      "types": "./dist/javascript.d.mts",
+      "default": "./dist/javascript.mjs"
+    },
+    "./typescript": {
+      "types": "./dist/typescript.d.mts",
+      "default": "./dist/typescript.mjs"
+    },
+    "./vue": {
+      "types": "./dist/vue.d.mts",
+      "default": "./dist/vue.mjs"
     }
   },
   "scripts": {
-    "build": "tsdown --dts"
+    "build": "obuild"
   },
   "dependencies": {
-    "@byscripts/eslint-plugin": "workspace:*"
+    "@eslint/js": "^10.0.1",
+    "@typescript-eslint/utils": "^8.56.1",
+    "typescript-eslint": "^8.56.1"
   },
   "peerDependencies": {
-    "eslint": "^9.22.0"
+    "eslint": "^9.22.0 || ^10.0.0",
+    "@byscripts/eslint-plugin": "workspace:*",
+    "@vue/eslint-config-typescript": "^14.7.0",
+    "eslint-plugin-vue": "^10.8.0"
+  },
+  "peerDependenciesMeta": {
+    "@byscripts/eslint-plugin": {
+      "optional": true
+    },
+    "@vue/eslint-config-typescript": {
+      "optional": true
+    },
+    "eslint-plugin-vue": {
+      "optional": true
+    }
   },
   "devDependencies": {
     "@tsconfig/node22": "^22.0.5",
-    "tsdown": "^0.20.3"
+    "obuild": "^0.4.31"
   },
   "license": "MIT"
 }

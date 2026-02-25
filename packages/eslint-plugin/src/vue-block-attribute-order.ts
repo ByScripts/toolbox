@@ -8,7 +8,7 @@ const DEFAULT_ORDER: AttributeOrder = {
   style: ["lang", "scoped"],
 };
 
-export const blockAttributeOrder: Rule.RuleModule = {
+export default {
   meta: {
     type: "layout",
     fixable: "code",
@@ -117,4 +117,4 @@ export const blockAttributeOrder: Rule.RuleModule = {
       },
     };
   },
-};
+} satisfies Rule.RuleModule;

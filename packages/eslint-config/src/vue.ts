@@ -1,12 +1,24 @@
-import { defineConfig } from "eslint/config";
-import byscriptsPlugins from "@byscripts/eslint-plugin";
+import vueBlockAttributeOrder from "@byscripts/eslint-plugin/vue-block-attribute-order";
+import typescriptConfig from "./typescript.js";
+import pluginVue from "eslint-plugin-vue";
+import {
+  defineConfigWithVueTs,
+  vueTsConfigs,
+} from "@vue/eslint-config-typescript";
 
-export default defineConfig([
+export default defineConfigWithVueTs(
+  {
+    name: "app/files-to-lint",
+    files: ["**/*.{vue,ts,mts,tsx}"],
+  },
+  typescriptConfig,
+  pluginVue.configs["flat/recommended-error"],
+  vueTsConfigs.recommended,
   {
     plugins: {
       byscripts: {
         rules: {
-          "vue-block-attribute-order": byscriptsPlugins.blockAttributeOrder,
+          "vue-block-attribute-order": vueBlockAttributeOrder,
         },
       },
     },
@@ -84,4 +96,4 @@ export default defineConfig([
       "byscripts/vue-block-attribute-order": "error",
     },
   },
-]);
+);
