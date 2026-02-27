@@ -112,4 +112,10 @@ export default defineConfigWithVueTs(
       "vue/v-on-handler-style": ["error", ["method", "inline-function"]],
     },
   },
+  {
+    files: ["*/pages/**/*.vue"],
+    rules: {
+      "vue/multi-word-component-names": "off",
+    }
+  }
 );
