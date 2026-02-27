@@ -1,10 +1,7 @@
 import vueBlockAttributeOrder from "@byscripts/eslint-plugin/vue-block-attribute-order";
 import typescriptConfig from "./typescript.js";
 import pluginVue from "eslint-plugin-vue";
-import {
-  defineConfigWithVueTs,
-  vueTsConfigs,
-} from "@vue/eslint-config-typescript";
+import { defineConfigWithVueTs, vueTsConfigs } from "@vue/eslint-config-typescript";
 
 export default defineConfigWithVueTs(
   {
@@ -44,21 +41,12 @@ export default defineConfigWithVueTs(
       "vue/define-macros-order": [
         "error",
         {
-          order: [
-            "defineOptions",
-            "defineProps",
-            "defineEmits",
-            "defineModel",
-            "defineSlots",
-          ],
+          order: ["defineOptions", "defineProps", "defineEmits", "defineModel", "defineSlots"],
           defineExposeLast: true,
         },
       ],
       "vue/define-props-declaration": ["error", "type-based"],
-      "vue/define-props-destructuring": [
-        "error",
-        { destructure: "only-when-assigned" },
-      ],
+      "vue/define-props-destructuring": ["error", { destructure: "only-when-assigned" }],
       "vue/enforce-style-attribute": ["error", { allow: ["scoped", "module"] }],
       "vue/html-button-has-type": "error",
       "vue/html-comment-content-newline": [
@@ -110,12 +98,13 @@ export default defineConfigWithVueTs(
       "vue/static-class-names-order": "error",
       "vue/v-for-delimiter-style": ["error", "of"],
       "vue/v-on-handler-style": ["error", ["method", "inline-function"]],
+      "vue/require-default-prop": "off",
     },
   },
   {
     files: ["*/pages/**/*.vue"],
     rules: {
       "vue/multi-word-component-names": "off",
-    }
-  }
+    },
+  },
 );
