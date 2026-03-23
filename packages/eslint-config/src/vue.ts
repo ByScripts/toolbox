@@ -1,4 +1,4 @@
-import byscriptsPlugin from "@byscripts/eslint-plugin";
+import byscriptsConfigs from "@byscripts/eslint-plugin";
 import typescriptConfig from "./typescript.js";
 import pluginVue from "eslint-plugin-vue";
 import {
@@ -14,7 +14,7 @@ export default defineConfigWithVueTs(
   typescriptConfig,
   pluginVue.configs["flat/recommended-error"],
   vueTsConfigs.recommended,
-  byscriptsPlugin.configs["vue-block-attribute-order"],
+  byscriptsConfigs["vue-block-attribute-order"],
   {
     rules: {
       "vue/block-order": ["error", { order: ["script", "template", "style"] }],

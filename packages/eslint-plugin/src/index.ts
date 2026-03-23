@@ -11,6 +11,13 @@ const plugin = {
 } satisfies ESLint.Plugin;
 
 const configs = {
+  all: {
+    plugins: { byscripts: plugin },
+    rules: {
+      "byscripts/no-cross-app-routes": "error",
+      "byscripts/vue-block-attribute-order": "error",
+    },
+  },
   "no-cross-app-routes": {
     plugins: { byscripts: plugin },
     rules: { "byscripts/no-cross-app-routes": "error" },
@@ -21,9 +28,4 @@ const configs = {
   },
 } satisfies Record<string, Linter.Config>;
 
-const byscriptsPlugin = {
-  ...plugin,
-  configs,
-};
-
-export default byscriptsPlugin;
+export default configs;
