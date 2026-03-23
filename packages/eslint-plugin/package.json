@@ -10,16 +10,21 @@
   ],
   "exports": {
     "./vue-block-attribute-order": {
-      "types": "./dist/vue-block-attribute-order.d.mts",
+      "types": "./dist/vue-block-attribute-order.d.ts",
       "default": "./dist/vue-block-attribute-order.mjs"
+    },
+    "./no-cross-app-routes": {
+      "types": "./dist/no-cross-app-routes.d.ts",
+      "default": "./dist/no-cross-app-routes.mjs"
     }
   },
   "scripts": {
-    "build": "obuild"
+    "build": "vite build"
   },
   "devDependencies": {
     "@tsconfig/node22": "^22.0.5",
-    "obuild": "^0.4.31"
+    "vite": "^8.0.1",
+    "vite-plugin-dts": "^4.5.4"
   },
   "peerDependencies": {
     "eslint": "^9.22.0 || ^10.0.0"

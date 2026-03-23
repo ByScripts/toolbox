@@ -1,4 +1,4 @@
-import type { Linter, Rule } from "eslint";
+import type { ESLint, Linter, Rule } from "eslint";
 
 type AttributeOrder = Record<string, string[]>;
 
@@ -7,7 +7,7 @@ const DEFAULT_ORDER: AttributeOrder = {
   style: ["lang", "scoped"],
 };
 
-const rule: Rule.RuleModule = {
+export const vueBlockAttributeOrder: Rule.RuleModule = {
   meta: {
     type: "layout",
     fixable: "code",
@@ -118,15 +118,13 @@ const rule: Rule.RuleModule = {
   },
 };
 
-export default {
-  plugins: {
-    byscripts: {
-      rules: {
-        "vue-block-attribute-order": rule,
-      },
-    },
-  },
-  rules: {
-    "byscripts/vue-block-attribute-order": "error",
-  },
-} satisfies Linter.Config;
+const plugin: ESLint.Plugin = {
+  rules: { "vue-block-attribute-order": vueBlockAttributeOrder },
+};
+
+const config: Linter.Config = {
+  plugins: { byscripts: plugin },
+  rules: { "byscripts/vue-block-attribute-order": "error" },
+};
+
+export default config;

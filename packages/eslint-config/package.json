@@ -23,7 +23,7 @@
     }
   },
   "scripts": {
-    "build": "obuild"
+    "build": "vite build"
   },
   "dependencies": {
     "@eslint/js": "^10.0.1",
@@ -31,9 +31,9 @@
     "typescript-eslint": "^8.56.1"
   },
   "peerDependencies": {
-    "eslint": "^9.22.0 || ^10.0.0",
     "@byscripts/eslint-plugin": "workspace:*",
     "@vue/eslint-config-typescript": "^14.7.0",
+    "eslint": "^9.22.0 || ^10.0.0",
     "eslint-plugin-vue": "^10.8.0"
   },
   "peerDependenciesMeta": {
@@ -49,7 +49,8 @@
   },
   "devDependencies": {
     "@tsconfig/node22": "^22.0.5",
-    "obuild": "^0.4.31"
+    "vite": "^8.0.1",
+    "vite-plugin-dts": "^4.5.4"
   },
   "license": "MIT"
 }
