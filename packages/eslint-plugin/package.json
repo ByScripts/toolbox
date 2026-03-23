@@ -9,13 +9,9 @@
     "dist"
   ],
   "exports": {
-    "./vue-block-attribute-order": {
-      "types": "./dist/vue-block-attribute-order.d.ts",
-      "default": "./dist/vue-block-attribute-order.mjs"
-    },
-    "./no-cross-app-routes": {
-      "types": "./dist/no-cross-app-routes.d.ts",
-      "default": "./dist/no-cross-app-routes.mjs"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
     }
   },
   "scripts": {

@@ -1,4 +1,4 @@
-import type { ESLint, Linter, Rule } from "eslint";
+import type { Rule } from "eslint";
 
 type AttributeOrder = Record<string, string[]>;
 
@@ -10,6 +10,9 @@ const DEFAULT_ORDER: AttributeOrder = {
 export const vueBlockAttributeOrder: Rule.RuleModule = {
   meta: {
     type: "layout",
+    docs: {
+      description: "Enforce a consistent order of attributes on Vue SFC block tags",
+    },
     fixable: "code",
     schema: [
       {
@@ -117,14 +120,3 @@ export const vueBlockAttributeOrder: Rule.RuleModule = {
     };
   },
 };
-
-const plugin: ESLint.Plugin = {
-  rules: { "vue-block-attribute-order": vueBlockAttributeOrder },
-};
-
-const config: Linter.Config = {
-  plugins: { byscripts: plugin },
-  rules: { "byscripts/vue-block-attribute-order": "error" },
-};
-
-export default config;

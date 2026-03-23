@@ -10,19 +10,8 @@ const external = [
 export default defineConfig({
   build: {
     lib: {
-      entry: {
-        "vue-block-attribute-order": resolve(
-          import.meta.dirname,
-          "src/vue-block-attribute-order.ts",
-        ),
-        "no-cross-app-routes": resolve(
-          import.meta.dirname,
-          "src/no-cross-app-routes.ts",
-        ),
-      },
-      fileName(_, entryName) {
-        return `${entryName}.mjs`;
-      },
+      entry: resolve(import.meta.dirname, "src/index.ts"),
+      fileName: "index",
       formats: ["es"],
     },
     rolldownOptions: {

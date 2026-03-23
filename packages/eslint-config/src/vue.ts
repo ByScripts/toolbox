@@ -1,7 +1,10 @@
-import vueBlockAttributeOrder from "@byscripts/eslint-plugin/vue-block-attribute-order";
+import byscriptsPlugin from "@byscripts/eslint-plugin";
 import typescriptConfig from "./typescript.js";
 import pluginVue from "eslint-plugin-vue";
-import { defineConfigWithVueTs, vueTsConfigs } from "@vue/eslint-config-typescript";
+import {
+  defineConfigWithVueTs,
+  vueTsConfigs,
+} from "@vue/eslint-config-typescript";
 
 export default defineConfigWithVueTs(
   {
@@ -11,7 +14,7 @@ export default defineConfigWithVueTs(
   typescriptConfig,
   pluginVue.configs["flat/recommended-error"],
   vueTsConfigs.recommended,
-  vueBlockAttributeOrder,
+  byscriptsPlugin.configs["vue-block-attribute-order"],
   {
     rules: {
       "vue/block-order": ["error", { order: ["script", "template", "style"] }],
@@ -41,12 +44,21 @@ export default defineConfigWithVueTs(
       "vue/define-macros-order": [
         "error",
         {
-          order: ["defineOptions", "defineProps", "defineEmits", "defineModel", "defineSlots"],
+          order: [
+            "defineOptions",
+            "defineProps",
+            "defineEmits",
+            "defineModel",
+            "defineSlots",
+          ],
           defineExposeLast: true,
         },
       ],
       "vue/define-props-declaration": ["error", "type-based"],
-      "vue/define-props-destructuring": ["error", { destructure: "only-when-assigned" }],
+      "vue/define-props-destructuring": [
+        "error",
+        { destructure: "only-when-assigned" },
+      ],
       "vue/enforce-style-attribute": ["error", { allow: ["scoped", "module"] }],
       "vue/html-button-has-type": "error",
       "vue/html-comment-content-newline": [

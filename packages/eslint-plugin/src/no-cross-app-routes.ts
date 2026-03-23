@@ -1,4 +1,4 @@
-import type { ESLint, Linter, Rule } from "eslint";
+import type { Rule } from "eslint";
 
 const DEFAULT_APPS_DIR = "src/apps";
 
@@ -20,7 +20,6 @@ export const noCrossAppRoutes: Rule.RuleModule = {
     type: "problem",
     docs: {
       description: "Disallow referencing routes that belong to another app",
-      recommended: true,
     },
     schema: [
       {
@@ -91,14 +90,3 @@ export const noCrossAppRoutes: Rule.RuleModule = {
     return { Literal: check };
   },
 };
-
-const plugin: ESLint.Plugin = {
-  rules: { "no-cross-app-routes": noCrossAppRoutes },
-};
-
-const config: Linter.Config = {
-  plugins: { byscripts: plugin },
-  rules: { "byscripts/no-cross-app-routes": "error" },
-};
-
-export default config;
